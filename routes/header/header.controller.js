@@ -1,5 +1,5 @@
 import { handleError } from "../../utils";
-import headerModel from "./header.model";
+import headerModel from "./header.model.js";
 
 const headerController = {
   index: async (req, res) => {

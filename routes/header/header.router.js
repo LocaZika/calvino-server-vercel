@@ -5,7 +5,6 @@ const router = Router();
 
 //GET header
 router.get("/", headerController.index);
-
 //POST header
 router.post("/", headerController.post);
 

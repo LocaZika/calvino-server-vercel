@@ -23,9 +23,9 @@ import contactPageRouter from "./routes/contactPage/contactPage.router";
 dotenv.config({ path: path.resolve(process.cwd(), `.env.${process.env.NODE_ENV}`) });
 // declare variables
 const app = express();
-const uri_mongoDB = process.env.URI_MONGODB;
+const mongoDB_uri = process.env.MONGODB_URI;
 // connect to database
-connect(uri_mongoDB, { dbName: "calvino" })
+connect(mongoDB_uri, { dbName: "calvino" })
   .then(() => console.log("Connect successfully!"))
   .catch((err) => console.log("Connect failed!", "\n", "Error: " + err.message));
 
@@ -57,10 +57,5 @@ app.use("/aboutPage", aboutPageRouter);
 app.use("/servicePage", servicePageRouter);
 app.use("/contactPage", contactPageRouter);
 app.use("/caseStudyPage", caseStudyPageRouter);
-// Create server
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is running in port: " + process.env.PORT);
-});
 
 export default app;
